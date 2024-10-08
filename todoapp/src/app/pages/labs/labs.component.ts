@@ -16,4 +16,6 @@ export class LabsComponent {
     'Crear proyecto',
     'Crear componentes',
   ];
+  name='KaisherDev';
+  age=24;
 }
