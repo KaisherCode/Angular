@@ -6,8 +6,17 @@
     {{ task }}
   </li>
 </ul>
+
 <hr>
 
 <h2>{{'Hola'.repeat(4)}}</h2>
 <p>La suma de 3+3 es {{3+3}}</p>
 <p>{{saludo}}, Soy {{name}} y mi edad es {{age}}</p>
+
+<hr>
+<h2>Angular Property Binding | Vinculación de Propiedades en Angular</h2>
+<img [src]="person.avatar" [alt]="name">
+<br>
+<input type="number" [value]="age">
+<button [disabled]="disabled">Click me</button>
+<p>Person: {{person.name}}</p>
