@@ -12,7 +12,7 @@
 
   <h2>{{'Hola'.repeat(4)}}</h2>
   <p>La suma de 3+3 es {{3+3}}</p>
-  <p>{{saludo}}, Soy {{name}} y mi edad es {{age}}</p>
+  <p>{{saludo}}, Soy {{name()}} y mi edad es {{age}}</p>
 
   <hr>
   <h2>Angular Property Binding | Vinculación de Propiedades en Angular</h2>
@@ -37,4 +37,9 @@
 
   <p>(keydown shift + t)</p>
   <input type="text" [value]="name" (keydown.shift.t)="clickHandler()">
+
+  <h2>Signals</h2>
+  <input type="text" [value]="name()" (change)="changeHandler($event)">
+  <p>Name: {{name()}}</p>
+
 </div>

@@ -20,3 +20,6 @@
 - En seguida instalamos angular `npm i @angular/cli -g`
 - ng new todoapp --skip-tests
 - Corremos el servidor de desarrollo `ng serve`
+
+> [!note!]
+> modelo de reactividad de signals
