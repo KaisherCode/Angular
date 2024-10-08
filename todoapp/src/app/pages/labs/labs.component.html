@@ -31,4 +31,10 @@
   <button class="dblclick" (dblclick)="clickHandler()">Double Click me</button>
   <p>(change)</p>
   <input type="number" [value]="age" (change)="changeHandler($event)">
+
+  <p>(keydown)</p>
+  <input type="text" [value]="name" (keydown)="keydownHandler($event)">
+
+  <p>(keydown shift + t)</p>
+  <input type="text" [value]="name" (keydown.shift.t)="clickHandler()">
 </div>
