@@ -10,10 +10,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  title = 'todoapp';
   welcome = 'Hola!';
   tasks = [
     'Instalar Angular CLI',
     'Crear proyecto',
     'Crear componentes',
-  ]
-};
+  ];
+}
