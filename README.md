@@ -15,3 +15,8 @@
     - Curso de Angular: Uint Testing para rutas
 
 
+- Instalamos el framework Angular `npm install @angular/cli -g`
+- Si no se puede instalar por la versión de npm actualizamos con `npm install -g npm@10.9.0`
+- En seguida instalamos angular `npm i @angular/cli -g`
+- ng new todoapp --skip-tests
+- Corremos el servidor de desarrollo `ng serve`
