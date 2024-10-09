@@ -16,7 +16,7 @@
 
   <hr>
   <h2>Angular Property Binding | Vinculación de Propiedades en Angular</h2>
-  <img [src]="person.avatar" [alt]="name()">
+  <img [src]="person().avatar" [alt]="name()">
   <br>
   <input type="number" [value]="age">
   <br>
@@ -48,5 +48,23 @@
       {{i}} {{ task }}
     </li>
   </ul>
+
+  <hr>
+
+  <div *ngIf="1 !== 1" >
+    My content
+  </div>
+
+  <div *ngIf="name()==='KaisherDev'" >
+    Yo soy {{name()}}
+  </div>
+
+  <input type="number" [value]="person().age" (change)="changeAge($event)">
+  <div *ngIf="person().name === 'KaisherDev' && person().age > 18; else elseBloque">
+    Soy KaisherDev y soy mayor de 18
+  </div>
+  <ng-template #elseBloque>
+    Soy KaisherDev y soy menor de 18
+  </ng-template>
 
 </div>
