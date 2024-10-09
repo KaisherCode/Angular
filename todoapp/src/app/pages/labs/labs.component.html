@@ -3,7 +3,7 @@
   <h2>{{welcome}}</h2>
 
   <ul>
-    <li *ngFor="let task of tasks">
+    <li *ngFor="let task of tasks()">
       {{ task }}
     </li>
   </ul>
@@ -16,7 +16,7 @@
 
   <hr>
   <h2>Angular Property Binding | Vinculación de Propiedades en Angular</h2>
-  <img [src]="person.avatar" [alt]="name">
+  <img [src]="person.avatar" [alt]="name()">
   <br>
   <input type="number" [value]="age">
   <br>
@@ -33,13 +33,20 @@
   <input type="number" [value]="age" (change)="changeHandler($event)">
 
   <p>(keydown)</p>
-  <input type="text" [value]="name" (keydown)="keydownHandler($event)">
+  <input type="text" [value]="name()" (keydown)="keydownHandler($event)">
 
   <p>(keydown shift + t)</p>
-  <input type="text" [value]="name" (keydown.shift.t)="clickHandler()">
-
+  <input type="text" [value]="name()" (keydown.shift.t)="clickHandler()">
+<hr>
   <h2>Signals</h2>
   <input type="text" [value]="name()" (change)="changeHandler($event)">
   <p>Name: {{name()}}</p>
+
+  <ul>
+    <p>Total: {{tasks().length}}</p>
+    <li *ngFor="let task of tasks(); index as i">
+      {{i}} {{ task }}
+    </li>
+  </ul>
 
 </div>
