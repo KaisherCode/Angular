@@ -37,7 +37,7 @@
 
   <p>(keydown shift + t)</p>
   <input type="text" [value]="name()" (keydown.shift.t)="clickHandler()">
-<hr>
+  <hr>
   <h2>Signals</h2>
   <input type="text" [value]="name()" (change)="changeHandler($event)">
   <p>Name: {{name()}}</p>
@@ -51,11 +51,11 @@
 
   <hr>
 
-  <div *ngIf="1 !== 1" >
+  <div *ngIf="1 !== 1">
     My content
   </div>
 
-  <div *ngIf="name()==='KaisherDev'" >
+  <div *ngIf="name()==='KaisherDev'">
     Yo soy {{name()}}
   </div>
 
@@ -72,8 +72,13 @@
   <div [ngSwitch]="person().name">
     <p *ngSwitchCase="'KaisherDev'">Yo soy KaisherDev</p>
     <p *ngSwitchCase="'Samantha'">Yo soy Samantha</p>
-    <p *gnSwitchCase="'Abigail'">Yo soy Abigail</p>
+    <p *ngSwitchCase="'Abigail'">Yo soy Abigail</p>
     <p *ngSwitchDefault>Yo no soy nadie</p>
   </div>
+
+  <hr>
+
+  <input type="color" [formControl]="colorCtrl">
+  <p>Color: {{colorCtrl.value}}</p>
 
 </div>
