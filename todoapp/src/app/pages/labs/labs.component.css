@@ -14,3 +14,9 @@
   border-radius: 4px;
   color: white;
 }
+
+.box{
+  height: 10px;
+  display: block;
+  background-color: red;
+}
