@@ -9,21 +9,16 @@
   </header>
   <div class="container todoapp-wrapper">
     <!-- This section should be hidden by default and shown when there are todos -->
-    <!-- <pre>
-      <code>
-        {{tasks() | json}}
-      </code>
-     </pre> -->
-    <section class="main">
+   <section class="main">
       <ul class="todo-list">
         <li (dblclick)="updateTaskEditingMode(i)"
-        *ngFor="let task of tasks(); index as i"
+        *ngFor="let task of tasksByFilter(); index as i"
         [class.editing]="task.editing"
         [class.completed]="task.completed">
           <div class="view">
             <input class="toggle" type="checkbox" [checked]="task.completed" (change)="updateTask(i)" />
             <label>{{task.title}}</label>
-            <button class="destroy" (click)="deleteTask(i)"></button>
+            <button class="destroy" (click)="deleteTask(task.id)"></button>
           </div>
           <input class="edit" (keydown.enter)="updateTaskText(i,$event)" [value]="task.title" />
         </li>
@@ -58,13 +53,13 @@
       <!-- Remove this if you don't implement routing -->
       <ul class="filters">
         <li>
-          <a routerLink="/" class="selected">All</a>
+          <a (click)="changeFilter('all')" class="selected">All</a>
         </li>
         <li>
-          <a routerLink="/pending">Pending</a>
+          <a (click)="changeFilter('pending')">Pending</a>
         </li>
         <li>
-          <a routerLink="/completed">Completed</a>
+          <a (click)="changeFilter('completed')">Completed</a>
         </li>
       </ul>
       <!-- Hidden if no completed items are left ↓ -->
