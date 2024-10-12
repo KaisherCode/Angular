@@ -25,7 +25,7 @@ export class LabsComponent {
 
   person = signal({
     name: 'KaisherDev',
-    age: 15,
+    age: 24,
     avatar: 'https://w3schools.com/howto/img_avatar.png',
   });
 
