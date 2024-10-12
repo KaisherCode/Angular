@@ -23,3 +23,7 @@
 
 > [!note!]
 > modelo de reactividad de signals
+
+### Comando para migrar a la nueva sintaxis de Angular
+
+`ng g @angular/core:control-flow`

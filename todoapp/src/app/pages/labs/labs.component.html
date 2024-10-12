@@ -3,9 +3,11 @@
   <h2>{{welcome}}</h2>
 
   <ul>
-    <li *ngFor="let task of tasks()">
+    @for (task of tasks(); track task) {
+    <li>
       {{ task }}
     </li>
+    }
   </ul>
 
   <hr>
@@ -44,32 +46,39 @@
 
   <ul>
     <p>Total: {{tasks().length}}</p>
-    <li *ngFor="let task of tasks(); index as i">
+    @for (task of tasks(); track task; let i = $index) {
+    <li>
       {{i}} {{ task }}
     </li>
+    }
   </ul>
 
   <hr>
 
-  <div *ngIf="1 !== 1">
+  @if (1 !== 1) {
+  <div>
     My content
   </div>
+  }
 
-  <div *ngIf="name()==='KaisherDev'">
+  @if (name()==='KaisherDev') {
+  <div>
     Yo soy {{name()}}
   </div>
+  }
 
   @if (person().name === 'KaisherDev'){
   <div>Soy KaisherDev</div>
 
   }
   <input type="number" [value]="person().age" (change)="changeAge($event)">
-  <div *ngIf="person().name === 'KaisherDev' && person().age > 18; else elseBloque">
+  @if (person().name === 'KaisherDev' && person().age > 18) {
+  <div>
     Soy KaisherDev y soy mayor de 18
   </div>
-  <ng-template #elseBloque>
-    Soy KaisherDev y soy menor de 18
-  </ng-template>
+  } @else {
+  Soy KaisherDev y soy menor de 18
+  }
 
   <h2>If else new</h2>
 
@@ -81,11 +90,21 @@
 
   <hr>
   <input type="text" [value]="person().name" (change)="changeName($event)">
-  <div [ngSwitch]="person().name">
-    <p *ngSwitchCase="'KaisherDev'">Yo soy KaisherDev</p>
-    <p *ngSwitchCase="'Samantha'">Yo soy Samantha</p>
-    <p *ngSwitchCase="'Abigail'">Yo soy Abigail</p>
-    <p *ngSwitchDefault>Yo no soy nadie</p>
+  <div>
+    @switch (person().name) {
+    @case ('KaisherDev') {
+    <p>Yo soy KaisherDev</p>
+    }
+    @case ('Samantha') {
+    <p>Yo soy Samantha</p>
+    }
+    @case ('Abigail') {
+    <p>Yo soy Abigail</p>
+    }
+    @default {
+    <p>Yo no soy nadie</p>
+    }
+    }
   </div>
 
   <hr>
@@ -117,9 +136,11 @@
 
   <ul>
     <p>Total: {{tasks().length}}</p>
-    <li *ngFor="let task of tasks(); index as i">
+    @for (task of tasks(); track task; let i = $index) {
+    <li>
       {{i}} {{ task }}
     </li>
+    }
   </ul>
 
   <ul>
